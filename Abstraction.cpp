@@ -6,7 +6,7 @@ class Abstraction //Abstraction using classes
 /*Data Abstraction means displaying only essential information and hiding the details. Data
 abstraction refers to providing only essential information about the data to the outside
 world, hiding the background details or implementation*/
-    private:
+    private:  //Abstraction using access specifier
         int x,y;
     public:
         void set(int a,int b)
