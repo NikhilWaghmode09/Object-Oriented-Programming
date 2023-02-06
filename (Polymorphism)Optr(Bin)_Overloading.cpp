@@ -20,7 +20,7 @@ using const is considered a good practice because it prevents operator function 
         temp.img = img + obj.img;
         return temp;
     }
-    Complex operator / (const Complex& obj){
+    Complex operator / (const Complex& obj){   //formula: https://d138zd1ktt9iqe.cloudfront.net/media/seo_landing_files/dividing-complex-numbers-1630595375.png
         Complex temp;
         float temp1 = (obj.real*obj.real)+(obj.img*obj.img);
         temp.real = (real*obj.real + img*obj.img) / temp1;
