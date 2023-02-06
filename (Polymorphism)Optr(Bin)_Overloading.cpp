@@ -1,4 +1,4 @@
-//Binary Operator Overloading Program --> Addition of two Complex numbers.
+//Binary Operator Overloading Program --> Addition and Division of two Complex numbers.
 #include<iostream>
 using namespace std;
 class Complex{
@@ -20,6 +20,13 @@ using const is considered a good practice because it prevents operator function 
         temp.img = img + obj.img;
         return temp;
     }
+    Complex operator / (const Complex& obj){
+        Complex temp;
+        float temp1 = (obj.real*obj.real)+(obj.img*obj.img);
+        temp.real = (real*obj.real + img*obj.img) / temp1;
+        temp.img = (img*obj.real - real*obj.img)/ temp1;
+        return temp;
+    }
     void display(){
         if(img<0){
             cout<<"Resultant complex no. is: " << real << img << "i";
@@ -34,6 +41,11 @@ int main(){
     n1.input();
     n2.input();
     result = n1 + n2; //calls the operator overloading fucntion. n2 is passed as an argument here.
+    result.display();
+    
+    cout << endl;
+    
+    result = n1/n2; //calls the operator / overloading fucntion.
     result.display();
     return 0;
 }
