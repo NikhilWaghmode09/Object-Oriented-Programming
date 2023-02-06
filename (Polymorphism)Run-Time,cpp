@@ -1,0 +1,49 @@
+//Run time polymorphism is also called dynamic polymorphism. It is implemented using function overriding.
+//funct overriding is redefining a function in derived class.
+#include<iostream>
+using namespace std;
+class Car{
+    public:
+        int top_speed;
+        Car()
+        {
+            cout << "A car would have 4 wheels.\n";
+        }
+        virtual void Speed(){                                      //Virtual Function.
+            top_speed = 25;
+            cout << "Top speed of a Car is " << top_speed << endl;
+        }
+};
+class Kia : public Car {
+    public:
+        void Speed(){
+            top_speed = 50;
+            cout << "Top speed Kia is " << top_speed << endl;
+        }
+};
+class Audi : public Car {
+    public:
+        void Speed(){
+            top_speed = 100;
+            cout << "Top speed of Audi is " << top_speed << endl;
+        }
+};
+int main(){
+    Car* p; //parent pointer object.
+    Car obj1;
+    p = &obj1;
+    p -> Speed();
+
+    cout << endl;
+
+    Kia seltos;
+    p = &seltos;
+    p -> Speed();
+
+    cout << endl;
+
+    Audi r8;
+    p = &r8;
+    p -> Speed();
+    return 0;
+}
